@@ -56,5 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
       var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
       window.open(url, "_blank", "noopener");
     });
+
+    // Netlify Forms only works when hosted on Netlify. On any other host
+    // (e.g. the GitHub Pages preview), "Send Enquiry" sends via WhatsApp instead.
+    if (!/netlify\.app$/.test(location.hostname) && !window.FORMS_BACKEND_READY) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        waBtn.click();
+      });
+    }
   }
 });

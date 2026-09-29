@@ -63,4 +63,5 @@ HTTPS is turned on automatically.
 - [ ] Domain → sitemap.xml and robots.txt, then submit sitemap in Google Search Console
 - [ ] Confirm "Machine Tool Reconditioning" wording on services.html and about.html
 - [ ] Remove the PREVIEW-ONLY `noindex` line from every page before going live
+- [ ] When moving to Netlify with the real domain: in `js/main.js` replace the hostname check with `if (false)` so "Send Enquiry" uses Netlify Forms (on the preview it falls back to WhatsApp)
 - [ ] Real logo, if the client has one → replace `images/logo-mark.svg`
