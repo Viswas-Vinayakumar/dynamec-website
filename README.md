@@ -14,7 +14,7 @@ contact.html      Contact details, map, enquiry form
 thank-you.html    Shown after the form is sent
 404.html          Shown for wrong links
 css/style.css     All design (colours at the top, in :root)
-js/main.js        Mobile menu, footer year, "Send on WhatsApp" button
+js/main.js        Mobile menu, footer year, "Send on WhatsApp" button, animations
 images/           Logo and favicon (add photos here in v2)
 robots.txt, sitemap.xml   For Google
 ```
@@ -53,6 +53,19 @@ Form notifications > Add email notification > `dynamecengineer@gmail.com`.
 or buy it elsewhere (GoDaddy, Hostinger, etc.) and point its DNS to Netlify as shown there.
 HTTPS is turned on automatically.
 
+## Animations
+
+All in `js/main.js` (section 4) and the end of `css/style.css`: header shadow on scroll,
+fade-in on scroll, counting stats, card spotlight, endless client strip on the home page,
+and the conveyor in the home hero. All are switched off for visitors who ask their device
+for reduced motion.
+
+## Enquiry form on the preview
+
+On the GitHub Pages preview (`*.github.io`) or when a page is opened straight from disk,
+"Send Enquiry" opens WhatsApp instead, because Netlify Forms only works on Netlify.
+On Netlify (both `*.netlify.app` and the real domain) the form submits normally.
+
 ## TODO for Version 2 (search the files for `TODO`)
 
 - [ ] Photos of workshop and work → add a Gallery page and swap into the hero/About page
@@ -63,5 +76,5 @@ HTTPS is turned on automatically.
 - [ ] Domain → sitemap.xml and robots.txt, then submit sitemap in Google Search Console
 - [ ] Confirm "Machine Tool Reconditioning" wording on services.html and about.html
 - [ ] Remove the PREVIEW-ONLY `noindex` line from every page before going live
-- [ ] When moving to Netlify with the real domain: in `js/main.js` replace the hostname check with `if (false)` so "Send Enquiry" uses Netlify Forms (on the preview it falls back to WhatsApp)
+- [ ] Once the real domain is live: turn off GitHub Pages (repo Settings > Pages) so there is no duplicate copy
 - [ ] Real logo, if the client has one → replace `images/logo-mark.svg`

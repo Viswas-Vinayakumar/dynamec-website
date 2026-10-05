@@ -63,9 +63,10 @@ document.addEventListener("DOMContentLoaded", function () {
       window.open(url, "_blank", "noopener");
     });
 
-    // Netlify Forms only works when hosted on Netlify. On any other host
-    // (e.g. the GitHub Pages preview), "Send Enquiry" sends via WhatsApp instead.
-    if (!/netlify\.app$/.test(location.hostname) && !window.FORMS_BACKEND_READY) {
+    // Netlify Forms only works when hosted on Netlify (netlify.app or the real
+    // domain). On the GitHub Pages preview or a file opened from disk,
+    // "Send Enquiry" sends via WhatsApp instead.
+    if (/github\.io$/.test(location.hostname) || location.protocol === "file:") {
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         waBtn.click();
