@@ -83,15 +83,16 @@ ul { margin: 0; padding: 0; list-style: none; }
 .site-header.scrolled { border-bottom-color: rgba(0, 0, 0, .08); }
 /* Over the dark blueprint section the header turns dark too */
 .site-header.on-dark { background: rgba(10, 34, 64, .72); border-bottom-color: rgba(255,255,255,.08); }
-.site-header.on-dark .brand, .site-header.on-dark .site-nav a { color: rgba(255,255,255,.82); }
+.site-header.on-dark .brand { color: #fff; }
+.site-header.on-dark .site-nav a { color: rgba(255,255,255,.82); }
 .site-header.on-dark .brand-text span { color: rgba(255,255,255,.55); }
 .site-header.on-dark .site-nav a[aria-current="page"] { color: #fff; }
 .site-header.on-dark .nav-toggle span:not(.sr-only) { background: #fff; }
 .nav-wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); }
 .brand:hover { text-decoration: none; }
-.brand img { width: 28px; height: 28px; }
-.brand-text { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+.brand-text { font-size: 17px; letter-spacing: -0.01em; white-space: nowrap; }
+.brand-text b { font-weight: 700; letter-spacing: 0.08em; }
 .brand-text span { color: var(--muted); font-weight: 400; }
 .site-nav { display: flex; align-items: center; gap: 30px; }
 .site-nav a { color: var(--ink-2); font-size: 14px; transition: color .2s; }
