@@ -55,10 +55,19 @@ HTTPS is turned on automatically.
 
 ## Animations
 
-All in `js/main.js` (section 4) and the end of `css/style.css`: header shadow on scroll,
-fade-in on scroll, counting stats, card spotlight, endless client strip on the home page,
-and the conveyor in the home hero. All are switched off for visitors who ask their device
-for reduced motion.
+All in `js/main.js` (section 4) and the end of `css/style.css`:
+- Home page: the blueprint drawing of a CNC machine draws itself as you scroll, then lights up
+  the conveyor, coolant tank, frame and hydraulics one by one with the matching service text.
+- Home page: the "33 years on the shop floor" statement lights up word by word; client names scroll in two rows.
+- Every page: headline entrance on load, section headings fade up once, frosted header,
+  cross-fade between pages, highlighted sub-menu on the Services page.
+All are switched off for visitors who ask their device for reduced motion.
+
+## HTTPS (SSL)
+
+Netlify gives the site a free Let's Encrypt certificate and renews it automatically,
+for both `*.netlify.app` and a custom domain (Netlify > Domain management > HTTPS).
+Nothing to install or renew by hand.
 
 ## Enquiry form on the preview
 
