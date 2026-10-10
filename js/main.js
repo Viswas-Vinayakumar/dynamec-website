@@ -100,7 +100,15 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollJobs.push(function () {
       var current = -1;
       groups.forEach(function (g, i) { if (g && g.getBoundingClientRect().top < window.innerHeight * 0.4) current = i; });
-      subLinks.forEach(function (a, i) { a.classList.toggle("is-active", i === current); });
+      subLinks.forEach(function (a, i) {
+        var was = a.classList.contains("is-active");
+        a.classList.toggle("is-active", i === current);
+        // keep the active pill visible when the menu scrolls sideways on phones
+        if (i === current && !was) {
+          var bar = a.parentNode;
+          bar.scrollTo({ left: a.offsetLeft - (bar.clientWidth - a.offsetWidth) / 2, behavior: reduceMotion ? "auto" : "smooth" });
+        }
+      });
     });
   }
 
